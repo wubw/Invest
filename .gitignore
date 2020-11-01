@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+Udemy - Python-for-Finance-Repo-master/
 
 # C extensions
 *.so

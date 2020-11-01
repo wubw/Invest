@@ -1,0 +1,80 @@
+priority_list = {'D05.SI': 2, 'ME8U.SI': 3, 'AJBU.SI': 3, 'C2PU.SI': 3,
+                 'BABA': 4, 'MSFT': 4, 'AAPL': 4, 'NVDA': 1, 'SPY': 2, 'ARKK': 4}
+current_stock_priority = {}
+current_stock_vol = {}
+
+
+def cal_priority(s, start_price, current_price):
+    diff = current_price/start_price
+    return priority_list[s] / diff
+
+
+def portfolio_analasis():
+    dt = datetime.strptime('2014-12-12', '%Y-%m-%d')
+    start_portfolio_price = {}
+    start_total_vol = 0
+    for s in stickers:
+        start_portfolio_price[s] = get_first_price(data[s], '2014-12-12')
+        start_total_vol += stock_vol[s]
+        current_stock_vol[s] = stock_vol[s]
+    print(start_portfolio_price)
+    print(start_total_vol)
+    monthly_invest_vol = start_total_vol/5
+    print(monthly_invest_vol)
+    split_montly_invest = 2
+
+    current_portfolio_price = {}
+    while dt < datetime.now():
+        for s in stickers:
+            current_price = get_first_price(data[s], dt.strftime('%Y-%m-%d'))
+            current_portfolio_price[s] = current_price
+
+            # print(current_portfolio_price)
+        dt += timedelta(days=30.4)
+        # print(dt)
+
+    print(current_portfolio_price)
+    last_portfolio_price_sum = 0
+    for s in stickers:
+        ratio = current_portfolio_price[s]/start_portfolio_price[s]
+        last_portfolio_price_sum += ratio * current_stock_vol[s]
+
+    time_delta = datetime.now()-datetime.strptime('2014-12-12', '%Y-%m-%d')
+    y = time_delta.days/365
+    increase = last_portfolio_price_sum/start_total_vol
+    print(increase)
+    print(y)
+    annualized_return = ((1+increase)**(1/y))-1
+    print(annualized_return)
+
+
+portfolio_analasis()
+
+
+stock_vol = {'D05.SI': 14304.61, 'ME8U.SI': 12461.29, 'AJBU.SI': 8190.2, 'C2PU.SI': 8334.25,
+             'BABA': 9599.58175, 'MSFT': 9764.975, 'AAPL': 9737.31, 'NVDA': 13249.665, 'SPY': 10460.01, 'ARKK': 10107.9825}
+
+
+divid = {'D05.SI': 0.07, 'ME8U.SI': 0.04, 'AJBU.SI': 0.025, 'C2PU.SI': 0.03,
+         'BABA': 0, 'MSFT': 0.007, 'AAPL': 0.004, 'NVDA': 0, 'SPY': 0.01, 'ARKK': 0}
+
+
+def calculate_all(strategy):
+    total_annual_return_sum = 0
+    total_sum = 0
+
+    for s in stickers:
+        print('====================== ' + s + ' ======================')
+        start_td = datetime.strptime('2007-3-1', '%Y-%m-%d')
+        ar, price_increase, cost_sum, unit_volum, start_td, period_y = calculate_stock(
+            data[s], start_td, datetime.now(), strategy)
+        total_annual_return_sum += stock_vol[s]*ar
+        total_sum += stock_vol[s]
+        #diff = (v_m_f-v_m_d)/v_m_f
+        #print('monthly dynamic + daily previous day =>')
+        #v_m_d_d_p = calculate(s, strategy_montly_dynamic, strategy_daily_previousday)
+
+    print('\r\n')
+    print('total annual return: \t' + str(total_annual_return_sum))
+    total_annual_return = total_annual_return_sum/total_sum
+    print('total ann ret rate: \t' + "{0:.1%}".format(total_annual_return))
