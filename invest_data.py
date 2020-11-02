@@ -1,8 +1,10 @@
 import pandas as pd
 import os
 
-stickers = ['D05.SI', 'ME8U.SI', 'AJBU.SI',
-            'C2PU.SI', 'BABA', 'MSFT', 'AAPL', 'NVDA', 'SPY', "ARKK"]
+stickers = ['D05.SI', 'ME8U.SI', 'AJBU.SI', 'C2PU.SI',
+            'BABA', 'MSFT', 'AAPL', 'NVDA', 'SPY', "ARKK",
+            "ARKW", "ARKG", "ARKQ", "ARKF", "QQQ",
+            "GOOG", "AMZN",  "TCEHY"]
 
 
 def load_data():
