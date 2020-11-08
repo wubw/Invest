@@ -3,8 +3,8 @@ import os
 
 stickers = ['D05.SI', 'ME8U.SI', 'AJBU.SI', 'C2PU.SI',
             'BABA', 'MSFT', 'AAPL', 'NVDA', 'SPY', "ARKK",
-            "ARKW", "ARKG", "ARKQ", "ARKF", "QQQ",
-            "GOOG", "AMZN",  "TCEHY"]
+            "ARKW", "QQQ",  "ARKG", "ARKQ", "ARKF",
+            "GOOG", "AMZN",  "TCEHY", ]
 
 
 def load_data():

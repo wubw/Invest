@@ -78,3 +78,9 @@ def calculate_all(strategy):
     print('total annual return: \t' + str(total_annual_return_sum))
     total_annual_return = total_annual_return_sum/total_sum
     print('total ann ret rate: \t' + "{0:.1%}".format(total_annual_return))
+
+adj_close_df = pd.DataFrame(columns=stickers)
+adj_close_df['AAPL'] = data['AAPL']['Adj Close']# the whole number of rows is decided by the first stock
+for s in stickers:
+    adj_close_df[s] = data[s]['Adj Close'] 
+adj_close_df
