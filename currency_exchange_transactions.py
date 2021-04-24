@@ -10,4 +10,6 @@ currency_exchange_transactions.append({'currency':'SGDUSD', 'amount':19700, 'tim
 currency_exchange_transactions.append({'currency':'SGDUSD', 'amount':30000, 'time':'2021-2-18', 'rate':1.3388, 'place':'dbs'})
 currency_exchange_transactions.append({'currency':'SGDUSD', 'amount':12999.65625+1, 'time':'2021-3-2', 'rate':1.33125, 'place':'ib'},)
 currency_exchange_transactions.append({'currency':'SGDUSD', 'amount':24969+1, 'time':'2021-3-4', 'rate':1.33168, 'place':'ib'})
-
+currency_exchange_transactions.append({'currency':'SGDUSD', 'amount':10000, 'time':'2021-4-19', 'rate':1.33404, 'place':'ib'})
+currency_exchange_transactions.append({'currency':'SGDUSD', 'amount':39712.8476, 'time':'2021-4-23', 'rate':1.3289, 'place':'ib'})
+currency_exchange_transactions.append({'currency':'SGDUSD', 'amount':1997.9379, 'time':'2021-4-23', 'rate':1.3293, 'place':'ib'})
