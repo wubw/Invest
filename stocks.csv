@@ -1,0 +1,4 @@
+,D05.SI,ME8U.SI,AJBU.SI,C2PU.SI,BABA,AAPL,MSFT,NVDA,FB,TSLA,U,SPY,ARKK,ARKW,ARKG,ARKQ,ARKF,PRNT,QQQ,SOXX,CQQQ
+company,DBS,Mappletree Ind,Keppel DC Reit,Parkway Life Reit,Alibaba,Apple,Microsoft,Nvidia,Facebook,Tesla,Unity,S&P 500,ARK Innovation,ARK Web x.0,ARK Genomic,ARK Autonomous,ARK Fintech,ARK 3D Printing,Nasdaq top 100,Semi Cond,China Tech
+currency,SGD,SGD,SGD,SGD,USD,USD,USD,USD,USD,USD,USD,USD,USD,USD,USD,USD,USD,USD,USD,USD,USD
+expense_ratio,,,,,,,,,,,,0.09,0.75,0.79,0.75,0.75,0.75,0.66,0.2,0.46,0.7
